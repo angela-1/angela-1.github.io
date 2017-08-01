@@ -1,3 +1,6 @@
-source 'https://rubygems.org'
-gem 'rouge'
-gem 'github-pages', group: :jekyll_plugins
+source "https://rubygems.org"
+
+gem 'github-pages'
+gem 'html-proofer'
+gem 'rack-contrib', '~> 1.1.0'
+gem 'rake'

@@ -1,8 +1,17 @@
 ---
-layout: default
+layout: bare
 ---
 
-<article>
-	<h1>{{ page.title }}</h1>
-		{{ content }}
-</article>
+<section class="hero colorful center">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    {{ content }}
+  </div>
+</section>
+
+{% include footer.html %}

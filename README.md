@@ -1,69 +1,77 @@
-# Holo Alfa Jekyll theme [![Build Status](https://travis-ci.org/steinvc/holo-alfa.svg?branch=master)](https://travis-ci.org/steinvc/holo-alfa) #
+![servicesbanner](https://cloud.githubusercontent.com/assets/13326548/21035994/ad40c19c-bd77-11e6-97fa-78b068050c05.jpg)
 
-![Screenshot](http://i.imgur.com/Gi46aag.jpg)
+[![Build Status](https://travis-ci.org/github/training-kit.svg?branch=master)](https://travis-ci.org/github/training-kit)
 
-Holo Alfa is a minimalist, mobile first Jekyll theme with focus on readability and content. Created for free and fun by Stijn.
+# GitHub Training Kit
+### Home of GitHub's On-Demand training
 
-See it in action: http://steinvc.github.io/holo-alfa/.
+This repository contains the completely open source on-demand training hosted at https://services.github.com/on-demand/. These materials are provided under a [_Creative Commons License_ license](https://github.com/github/training-kit/blob/master/LICENSE).
 
-## Feature highlights ##
+## We :heart: Contributors Like You!
 
-* Mobile first design
-* Extensive content styling
-* Responsive video's (using [FitVids.JS](http://fitvidsjs.com/))
-* Support for authors and guest authors
-* Read time on articles
-* Disqus comments
-* Automatic [og metadata](http://ogp.me/)
-* Automatic archive page (without plugins)
-* Automatic sitemap en RSS feed
-* Contact page (with working email form)
-* A lot of (optional) customization options (all in `_config.yml`)
+**We’re eager to work with you**, our user community to improve these materials and develop new ones. Here's how you can help:
 
-And much more.
+- **You spotted a mistake:** please feel free to fork the repository and submit a change via Pull Request (not sure how to do that, [we have a course for you](https://services.github.com/on-demand)).
+- **You have an idea to make it better:** we :heart: new ideas! We invite you to open a new [Issue](https://github.com/github/training-kit/issues) if you want to talk about it, or you can [fork this repository](https://help.github.com/articles/working-with-forks/) and submit your idea via a Pull Request.
+- **You just want to help:** check out the [open issues](https://github.com/github/training-kit/issues) for projects you can tackle, review an [open pull request](https://github.com/github/training-kit/pulls), or check out [the project ROADMAP](https://github.com/github/training-kit/projects/1).
 
-## Getting started ##
+For more information on contributing to this repository, check out our [CONTRIBUTING guide](https://github.com/github/training-kit/blob/master/CONTRIBUTING.md).
 
-If you're new to Jekyll, check out http://jekyllrb.com/ and read up on Jekyll. It's worth it.
+## :world_map: Finding Your Way
 
-* [Another great resource to learn about Jekyll](http://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
-* [Github's guide to using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/)
+This repository contains three primary resources:
 
-If you run one of the latest versions of Jekyll, this theme will work with no* problems.
+- Our current [on-demand courses](https://services.github.com/on-demand/) can be found in the [paths directory](/paths)
+- The translations of our popular [Git Cheat Sheets](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) can be found in the [downloads directory](/downloads). We're always looking for more. _P.S._ Right now the PDF generation is a manual process so please mention @github/services-training for assistance in getting your translation moved to the PDF.
+- The recommended Training Path can be found [here](https://services.github.com/resources/learning-path/).
 
-### Installing ##
+## Our Content Philosophy
 
-As simple as forking the repository, and then clone it so you can edit the files locally.
+We are eager to create materials that are easy to use and follow! To that end, here are a few guidelines we ask you to keep in mind:
 
-### Configuration ###
+- We focus on providing clear, step-by-step instructions for completing an activity, giving the learner the opportunity to study the concept in greater detail with the Tell Me Why feature.
+- We focus on minimalism.
 
-Edit `_config.yml`!
+## Projects Used in Training-Kit
+- We use [Jekyll](https://jekyllrb.com/) and [Markdown](https://guides.github.com/features/mastering-markdown/).
+- The theme for the on-demand training is [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) and has some [amazing documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
+- The corner badge of an Octocat is from [tholman.com](http://tholman.com/github-corners/)
 
-You can find `_config.yml` in your site's root directory. This configuration file contains some necessary settings and some optional customization settings. **All settings are explained in `_config.yml` itself.**
+## Building and Packaging
 
-There are some customizations that can't be done in `_config.yml`. These include:
+#### Building and Testing Locally
 
-* Editing the About, Contact and Archive page.
-* Adding or removing pages from the navigation. This can be done in `\_includes\navigation.html`.
-* The "thanks" page after a message has been send through the contact page: `thanks.md`
-* The gradient on cover images: `\_includes\gradient.css` (this is explained in `_config.yml`).
+When you are ready to test your changes, you will want to build the repository locally. This is fully automated through a series of shell scripts based [the scripts to rule them all](https://github.com/github/scripts-to-rule-them-all)!
 
-Also make sure to replace the placeholder favicons and the `\img\og-image.jpg` with your own.
+To perform a build of the materials perform the following:
 
-### Start the Jekyll server ###
+1. Run `script/setup`
+1. Run `script/server`.
+    - When successful, the script will initiate a local server at `http://127.0.0.1:4000/on-demand`.
+1. Simply paste that into your favorite web-browser and you will be ready to test.
 
-Run this command at the root of your site:
+#### Packaging for Viewing Behind Your Firewall
 
-```
-$ jekyll serve
-```
+If you'd like to have a copy of the files to be served from a web server inside of your firewall, start by running `script/package`.
 
-> To run Jekyll in a way that matches the GitHub Pages build server, run Jekyll with Bundler. Use the command `bundle exec jekyll serve`.
+1. Run `script/package` to create a release tarball. This will be in the format `release-XXXXXXX.tgz` for you to take wherever you want.
+2. To test this looks okay, create some folders `mkdir -p test_site/kit`.
+3. Untar the release, `tar -xzf release-XXXXXXX.tgz -C test_site/kit`.
+4. Switch into the test_site directory, `cd test_site`.
+5. View the site with `python -m SimpleHTTPServer`. _Note: Some servers are obviously more advanced than others and can handle redirects, smart recognition of `.html` files, etc_
 
-When everything is OK, your site should now be available at `http://localhost:4000`.
+## Licenses
 
-That's it.
+Site content is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/). CC-BY-4.0 gives you permission to use content for almost any purpose but does not grant you any trademark permissions, so long as you note the license and give credit, such as follows:
 
----
+> Content based on
+> <a href="https://services.github.com/on-demand/">services.github.com/on-demand</a>
+> used under the
+> <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+> license.</a>
 
-[MIT license](http://opensource.org/licenses/MIT)
+Code used to build and test the site as well as code samples on the site, if any, are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode). CC0 waives all copyright restrictions but does not grant you any trademark permissions.
+
+This means you can use the content and code in this repository except for GitHub trademarks in your own projects.
+
+When you contribute to this repository you are doing so under the above licenses.
